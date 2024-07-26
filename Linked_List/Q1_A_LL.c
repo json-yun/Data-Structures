@@ -120,44 +120,6 @@ int insertSortedLL(LinkedList *ll, int item)
     ll->size++;
 
     return i;
-
-//////////////////////////////////////
-
-    // if (ll->head == NULL)
-    // {
-    //     ll->head = new;
-    //     ll->size++;
-    //     return 0;
-    // }
-    // else if (new->item < ll->head->item) {
-    //     new->next = ll->head;
-    //     ll->head = new;
-    //     ll->size++;
-    //     return 0;
-    // }
-
-    // for (int i = 1; i <= ll->size; i++)
-    // {
-    //     if (new->item == now->item) {
-    //         return -1;
-    //     }
-    //     else if (now->next == NULL) {
-    //         now->next = new;
-    //         temp = i;
-    //         break;
-    //     }
-    //     else if (new->item < now->next->item) {
-    //         new->next = now->next;
-    //         now->next = new;
-    //         temp = i;
-    //         break;
-    //     }
-    //     else {
-    //         now = now->next;
-    //     }
-    // }
-    // ll->size++;
-    // return temp;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
