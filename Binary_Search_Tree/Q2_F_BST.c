@@ -90,7 +90,31 @@ int main()
 
 void inOrderTraversal(BSTNode *root)
 {
-	 /* add your code here */
+	Stack s;
+    BSTNode *cur, *prev;
+
+    if (root == NULL) return;
+
+    s.top = NULL;
+    cur = NULL;
+    prev = root;
+    
+    push(&s, root);
+    while(!isEmpty(&s)) {
+        cur = pop(&s);
+        if (cur->left == NULL && cur->right == NULL) {
+            printf("%d ", cur->item);
+        }
+        else if ((peek(&s) != NULL && cur->right == peek(&s)) || (prev != NULL && cur->left == prev)) {
+            printf("%d ", cur->item);
+        }
+        else {
+            if (cur->right != NULL) push(&s, cur->right);
+            push(&s, cur);
+            if (cur->left != NULL) push(&s, cur->left);
+        }
+        if (prev != NULL && prev->right != cur) prev = cur;
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
